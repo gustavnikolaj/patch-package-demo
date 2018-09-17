@@ -1,0 +1,14 @@
+patch-package
+--- a/node_modules/httperrors/lib/HttpError.js
++++ b/node_modules/httperrors/lib/HttpError.js
+@@ -71,6 +71,10 @@ HttpError.supports = function (errorOrErrorCode) {
+     }
+ };
+ 
++HttpError.create = function(status) {
++    return new HttpError(status);
++};
++
+ // For backwards compatibility:
+ HttpError.HttpError = HttpError;
+ 
